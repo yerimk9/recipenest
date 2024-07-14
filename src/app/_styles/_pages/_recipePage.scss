@@ -1,0 +1,108 @@
+.recopeMenu-contianer {
+    font-family: 'SUIT-Regular';
+    .hero-section { 
+      margin-top: 92px;
+    }
+    
+  .menuDesc-container {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 60px;
+  
+    .menu-desc {
+
+      h3 {
+        font-size: 2.6rem;
+        font-weight: 800;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      width: 50%;
+
+      font-size: 1.2rem;
+
+      .text-desc {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        div:last-child {
+          font-size: 1rem;
+          color: #666;
+        }
+      }
+
+      .circleTag {
+        display: inline-block;
+        margin-bottom: 0.625rem;
+        padding: 0.313rem 0.563rem;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 5px;
+        background-color: #0bab6d;
+      }
+
+        .circle-whiteTag {
+          display: inline-block;
+        margin-bottom: 0.625rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+        font-weight: 400;
+        border-radius: 5px;
+    background-color: #fff ;
+    color: #000 ;
+  }
+  
+    .menu-kind-contianer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) { 
+  .recopeMenu-contianer {
+
+    .menuDesc-container {
+      flex-direction: column-reverse;
+  
+      .menu-desc {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+      }
+    }
+  }
+} 
+
+
+@media all and (max-width:767px) {
+   .recopeMenu-contianer {
+    .menuDesc-container {
+      flex-direction: column-reverse;
+  
+      .menu-desc {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+} 
+

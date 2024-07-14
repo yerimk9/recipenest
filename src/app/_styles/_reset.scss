@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  background-color: #EEEAE2;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,343 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #EEEAE2;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+.gallery {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.container {
+  height: 6%;
+}
+
+.cards li {
+  list-style: none;
+  width: 30rem;
+  height: 40rem;
+  background-color: #d1d1d1;
+  text-align: center;
+  line-height: 35rem; /* 카드 높이에 맞춘 라인 높이 조정 */
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 20% 20% 200px; /* Adjusted to make the effect more curved */
+  transform: rotateY(calc(var(--i) * 36deg));
+  filter: brightness(50%);
+}
+
+.center-card {
+  filter: brightness(90%) !important;
+}
+
+.cardDesc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.cardDesc-container .center-card-text {
+  font-family: "Noto Sans KR", sans-serif;
+  position: fixed;
+  bottom: 16%;
+  left: 50%;
+  transform: translate(-50%, -2%);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.cardDesc-container .card-status {
+  position: fixed;
+  bottom: 11%;
+  left: 50%;
+  transform: translate(-50%, -12%);
+  font-size: 1rem;
+}
+.cardDesc-container label progress {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  vertical-align: -webkit-baseline-middle;
+  margin: 0 10px;
+}
+.cardDesc-container label progress::-webkit-progress-bar {
+  background: #f0f0f1;
+  border: 1px solid #eeeeee;
+  height: 4px;
+  overflow: hidden;
+}
+.cardDesc-container label progress::-webkit-progress-value {
+  background: gray;
+  height: 28px;
+  width: 48px;
+}
+
+@media all and (max-width: 767px) {
+  .gallery .cards li {
+    width: 30rem;
+    height: 40rem;
+    top: 30%;
+  }
+  .gallery .center-card-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .gallery .container {
+    height: 40%;
+  }
+}
+.hero-section {
+  position: relative;
+  top: 10%;
+  font: 700 9vw/1 "Playfair Display", serif;
+  color: #133E35;
+}
+
+.recipeItem-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  margin: 100px auto;
+}
+.recipeItem-container .recipe-item {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+  flex-shrink: 0;
+}
+.recipeItem-container .recipe-item .recipe-item-desc {
+  width: 60%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 18px;
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (max-width: 1023px) {
+  .recipeItem-container .recipe-item {
+    flex-direction: column;
+  }
+  .recipeItem-container .recipe-item .recipe-item-desc {
+    width: 100%;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 92px;
+  padding: 0 min(3rem, 30px);
+  z-index: 100;
+}
+header .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #133E35;
+}
+
+.recopeMenu-contianer {
+  font-family: "SUIT-Regular";
+}
+.recopeMenu-contianer .hero-section {
+  margin-top: 92px;
+}
+.recopeMenu-contianer .menuDesc-container {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 60px;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 50%;
+  font-size: 1.2rem;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc h3 {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc .text-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc .text-desc div:last-child {
+  font-size: 1rem;
+  color: #666;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc .circleTag {
+  display: inline-block;
+  margin-bottom: 0.625rem;
+  padding: 0.313rem 0.563rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: #0bab6d;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc .circle-whiteTag {
+  display: inline-block;
+  margin-bottom: 0.625rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+.recopeMenu-contianer .menuDesc-container .menu-desc .menu-kind-contianer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .recopeMenu-contianer .menuDesc-container {
+    flex-direction: column-reverse;
+  }
+  .recopeMenu-contianer .menuDesc-container .menu-desc {
+    width: 100%;
+  }
+  .recopeMenu-contianer .menuDesc-container img {
+    width: 100%;
+    height: 450px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media all and (max-width: 767px) {
+  .recopeMenu-contianer .menuDesc-container {
+    flex-direction: column-reverse;
+  }
+  .recopeMenu-contianer .menuDesc-container .menu-desc {
+    width: 100%;
+  }
+  .recopeMenu-contianer .menuDesc-container img {
+    width: 100%;
+    height: 350px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.about-container {
+  display: flex;
+}
+.about-container .aboutImg-container {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+}
+.about-container .aboutDesc-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  line-height: 2.059;
+}
+.about-container .aboutDesc-container h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.about-container .aboutDesc-container .homeBtn {
+  height: 92px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 min(3rem, 30px);
+}
+.about-container .sources {
+  color: #666;
+  font-size: 0.8rem;
+}
+.about-container .sources:hover {
+  text-decoration: underline;
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-container .aboutImg-container {
+    width: 100%;
+    height: 400px;
+  }
+  .about-container .aboutDesc-container {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .about-container .homeBtn {
+    height: 32px;
+  }
+}
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-container .aboutImg-container {
+    width: 100%;
+    height: 400px;
+  }
+  .about-container .aboutDesc-container {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .about-container .aboutDesc-container h3 {
+    font-size: 1.8rem;
+  }
+  .about-container .homeBtn {
+    height: 32px;
+  }
+}/*# sourceMappingURL=index.css.map */

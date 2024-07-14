@@ -1,0 +1,40 @@
+.recipeItem-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+
+  margin: 100px auto;
+
+  .recipe-item {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    flex-shrink: 0;
+
+    .recipe-item-desc {
+      width: 60%;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 18px;
+    }
+  }
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and  (max-width:1023px) { 
+  //스타일 입력
+  .recipeItem-container {
+
+    .recipe-item {
+      flex-direction: column;
+
+       .recipe-item-desc {
+      width: 100%;
+    }
+    }
+  }
+} 
