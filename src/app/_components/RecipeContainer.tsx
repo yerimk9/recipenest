@@ -7,15 +7,15 @@ import {  Recipe, RecipeContainerProps } from "../_types";
 
 function RecipeContainer({ recipe }:RecipeContainerProps ) {
   const manualImgs = Object.keys(recipe[0]).filter(
-    (key) => key.startsWith("MANUAL_IMG") && recipe[0][key]
+    (key) => key.startsWith("MANUAL_IMG") && recipe[0][key as keyof Recipe]
   );
   const manualData = manualImgs.map((imgKey) => {
     const manualKey = imgKey.replace("_IMG", "");
     return {
       imgKey: imgKey,
-      imgValue: recipe[0][imgKey],
+      imgValue: recipe[0][imgKey as keyof Recipe] as string,
       manualKey: manualKey,
-      manualValue: recipe[0][manualKey],
+      manualValue: recipe[0][manualKey as keyof Recipe] as string,
     };
   });
 

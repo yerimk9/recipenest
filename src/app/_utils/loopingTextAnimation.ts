@@ -1,11 +1,11 @@
 import { LoopingTextState } from "../_types";
 
-export default function createLoopingText(el: HTMLElement):  LoopingTextState {
+export default function createLoopingText(el: HTMLElement): LoopingTextState {
   const lerp = (current: number, target: number, factor: number) =>
     current * (1 - factor) + target * factor;
 
   const state = {
-    el,
+    el: el as HTMLElement,
     lerp: {
       current: 0,
       target: 0,
@@ -17,9 +17,12 @@ export default function createLoopingText(el: HTMLElement):  LoopingTextState {
 
   state.el.style.cssText =
     "position: relative; display: inline-flex; white-space: nowrap;";
-  state.el.children[1].style.cssText = `position: absolute; left: ${
-    100 * -state.direction
-  }%;`;
+
+  // el.children[1]의 타입을 HTMLElement로 명시적으로 지정
+  const childElement = state.el.children[1] as HTMLElement;
+  if (childElement) {
+    childElement.style.cssText = `position: absolute; left: ${100 * -state.direction}%;`;
+  }
 
   function animate() {
     state.lerp.target += state.speed;

@@ -95,7 +95,9 @@ export default function CardCarousel({ recipes }: CardCarouselProps) {
       <div className="container">
         <ul className="cards">
           {recipes.map((item, idx) => (
-            <li key={idx} ref={(el) => (cardsRef.current[idx] = el)} >
+            <li key={idx} ref={(el) => {
+              if (el) cardsRef.current[idx] = el;
+            }} >
               <Link href={`/menu/${encodeURIComponent(item["RCP_NM"])}`}>
                 <Image
                   src={item["ATT_FILE_NO_MAIN"]}

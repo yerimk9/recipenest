@@ -40,7 +40,7 @@ export default function updateCenterCard(cards: HTMLLIElement[]) {
   // 중앙 카드 텍스트 업데이트
   const centerCardTextElement = document.querySelector(".center-card-text") as HTMLElement | null;
   if (centerCardTextElement && closestCard) {
-    centerCardTextElement.textContent = `${closestCard.textContent} 레시피`;
+    centerCardTextElement.textContent = `${(closestCard as HTMLElement).textContent}} 레시피`;
   }
 
   // 카드 회전 업데이트
