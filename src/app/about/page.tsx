@@ -1,3 +1,4 @@
+"use client";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import { useEffect } from "react";
 import animateFadeIn from "../_utils/animations";
 
 export default function AboutPage() {
+  animateFadeIn();
   return (
     <div className="about-container">
       <div className="aboutImg-container">
