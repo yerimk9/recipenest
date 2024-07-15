@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "./css/global.css";
 import "./css/index.css";
 import Head from "next/head";
-import { useEffect } from "react";
 import gsap from "gsap";
 import animateFadeIn from "./_utils/animations";
 
@@ -20,9 +19,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    animateFadeIn();
-  }, []);
+  animateFadeIn();
   return (
     <html lang="en">
       <Head>
