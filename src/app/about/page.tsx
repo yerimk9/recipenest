@@ -1,18 +1,10 @@
-"use client";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import animateFadeIn from "../_utils/animations";
 
 export default function AboutPage() {
-  useEffect(() => {
-    let tl = gsap.timeline();
-
-    tl.to(document.querySelector("body"), { opacity: 0, duration: 0.5 }).to(
-      document.querySelector("body"),
-      { opacity: 1, duration: 1 }
-    );
-  }, []);
   return (
     <div className="about-container">
       <div className="aboutImg-container">
