@@ -23,12 +23,12 @@
   height: 40rem;
   background-color: #d1d1d1;
   text-align: center;
-  line-height: 35rem; /* 카드 높이에 맞춘 라인 높이 조정 */
+  line-height: 35rem;
   font-size: 1.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: 20% 20% 200px; /* Adjusted to make the effect more curved */
+  transform-origin: 20% 20% 200px;
   transform: rotateY(calc(var(--i) * 36deg));
 
   filter: brightness(50%);
@@ -47,7 +47,7 @@
   .center-card-text {
     font-family: "Noto Sans KR", sans-serif;
     position: fixed;
-    bottom: 16%;
+    bottom: 10%;
     left: 50%;
     transform: translate(-50%, -2%);
     font-size: 1.2rem;
@@ -55,7 +55,7 @@
   }
   .card-status {
     position: fixed;
-    bottom: 11%;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, -12%);
     font-size: 1rem;
@@ -83,25 +83,21 @@
   }
 }
 
-
-
-@media all and (max-width:767px) {
+@media all and (max-width: 767px) {
   .gallery {
-
-     .cards li {
+    .cards li {
       width: 30rem;
       height: 40rem;
       top: 30%;
-     }
+    }
 
-     .center-card-text {
-    font-size: 1.1rem;
-    font-weight: 600;
+    .center-card-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .container {
+      height: 40%;
+    }
   }
-
-     .container {
-  height: 40%;
 }
-  }
-
-} 
