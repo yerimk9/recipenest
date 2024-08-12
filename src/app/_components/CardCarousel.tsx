@@ -98,7 +98,7 @@ export default function CardCarousel({ recipes }: CardCarouselProps) {
             <li key={idx} ref={(el) => {
               if (el) cardsRef.current[idx] = el;
             }} >
-              <Link href={`/menu/${encodeURIComponent(item["RCP_NM"])}`}>
+              <Link href={`/menu/${encodeURIComponent(item["RCP_NM"])}`} scroll={true}>
                 <Image
                   src={item["ATT_FILE_NO_MAIN"]}
                   alt={`${item["RCP_NM"]}Img`}
